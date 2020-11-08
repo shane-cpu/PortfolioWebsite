@@ -39,8 +39,7 @@ body {
 }
 .Title {
     background: #FFFFFF;
-    border: solid;
-    padding: 0 15px;
+    padding: 5px 0 0 0;
     margin: 15px auto;
     width: 400px;
     height: 50px;
