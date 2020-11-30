@@ -20,3 +20,14 @@ THDB.addEventListener("mouseenter", function() {
 THDB.addEventListener("mouseleave", function() {
     document.getElementById("3DB").style.borderColor = "white";
 });
+
+let FFD = document.getElementById("FFD");
+FFD.addEventListener("click", function() {
+    location.replace("FlowFieldExample.html")
+});
+FFD.addEventListener("mouseenter", function() {
+    document.getElementById("FFD").style.borderColor = "orange";
+});
+FFD.addEventListener("mouseleave", function() {
+    document.getElementById("FFD").style.borderColor = "white";
+});

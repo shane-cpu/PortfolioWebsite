@@ -8,26 +8,41 @@
 let arrows = [];
 let vectors = [];
 
+let pPos = [];
+let pVel = [];
+
+let mouseDown = false;
+
+let increment = 0.05;
+
 function setup() {
 	createCanvas(600, 600);
 
 	let offsetX = 10;
 	let offsetY = 10;
 
+	
+	let noiseY = 1;
+
 	for (let i = 0; i < 40; i++) {
 		arrows[i] = [];
 		vectors[i] = [];
 		
 		offsetX = 10;
-
+		let noiseX = 1;
 		for (let j = 0; j < 40; j++) {
 			arrows[i][j] = new Vector2(offsetX, offsetY);
 			offsetX += 20;
 
-			vectors[i][j] = new Vector2(randomRange(-1, 1), randomRange(-1, 1));
+			let angle = noise(noiseX, noiseY) * TWO_PI;
+
+
+			vectors[i][j] = new Vector2(cos(angle), sin(angle));
+			noiseX += increment;
 		}
 
 		offsetY += 20;
+		noiseY += increment;
 	}
 }
 
@@ -44,53 +59,65 @@ function draw() {
 			arrow(arrows[i][j].x, arrows[i][j].y, vectors[i][j].x, vectors[i][j].y, 20);
 		}
 	}
+
+	if (mouseDown) {
+		pPos.push(new Vector2(mouseX, mouseY));
+
+		pVel.push(new Vector2(random(-2,2), random(-2,2)));
+	}
+
+	for (let i = 0; i < pPos.length; i++) {
+		
+		pPos[i].addVect(pVel[i]);
+
+		if (pPos[i].x < 0 || pPos[i].x > width || pPos[i].y < 0 || pPos[i].y > height) {
+			pPos.splice(i, 1);
+			pVel.splice(i, 1);
+
+			i--;
+		}
+		else {
+			let acc = pointToGrid(pPos[i]);
+			//arrow(arrows[acc.y][acc.x].x, arrows[acc.y][acc.x].y, vectors[acc.y][acc.x].x, vectors[acc.y][acc.x].y, 20);
+			acc = vectors[acc.y][acc.x].clone();
+
+			pVel[i].addVect(acc);
+			pVel[i].clamp(-4, 4);
+
+			strokeWeight(7);
+			stroke(255);
+			point(pPos[i].x, pPos[i].y);
+		}
+	}
+
+	// if (mouseX > 0 && mouseX < width && mouseY > 0 && mouseY < height) {
+	// 	let mPos = pointToGrid(new Vector2(mouseX, mouseY));
+	// 	arrow(arrows[mPos.y][mPos.x].x, arrows[mPos.y][mPos.x].y, vectors[mPos.y][mPos.x].x, vectors[mPos.y][mPos.x].y, 100);
+	// }
 }
 
-function arrow(PosX, PosY, DirX, DirY, mult) {
-	let Pos = new Vector2(PosX, PosY);
-	let Dir = new Vector2(DirX, DirY);
-	let DefMult = 7.5;
-
-	if (mult != null) mult /= 2;
-
-	let S1 = Pos.clone();
-	let S2 = Pos.clone();
-	let D1 = Dir.clone();
-
-	D1.normalize();
-	if (mult == null) D1.mult(DefMult);
-	else D1.mult(mult);
-
-	S1.addVect(D1);
-	S2.subVect(D1);
-
-	line(S1.x, S1.y, S2.x, S2.y);
-
-	D1.normalize();
-	D1.mult(-1);
-	let Angle = Math.atan2(D1.y, D1.x);
-
-	let P1 = 0;
-	if (mult == null) P1 = new Vector2((DefMult * 0.8) * Math.cos(Angle + 0.3), (DefMult * 0.8) * Math.sin(Angle + 0.3));
-	else P1 = new Vector2((mult * 0.8) * Math.cos(Angle + 0.3), (mult * 0.8) * Math.sin(Angle + 0.3));
-	P1.addVect(Pos.clone());
-
-	let P2 = 0;
-	if (mult == null) P2 = new Vector2((DefMult * 0.8) * Math.cos(Angle - 0.3), (DefMult * 0.8) * Math.sin(Angle - 0.3));
-	else P2 = new Vector2((mult * 0.8) * Math.cos(Angle - 0.3), (mult * 0.8) * Math.sin(Angle - 0.3));
-	P2.addVect(Pos.clone());
-
-	line(S2.x, S2.y, P1.x, P1.y);
-	line(S2.x, S2.y, P2.x, P2.y);
+function mousePressed() {
+	mouseDown = true;
 }
+ function mouseReleased() {
+ 	mouseDown = false;
+ }
 
-function arrowAngle(Pos, Angle, Mult) {
-	let DirX = Math.cos(Angle);
-	let DirY = Math.sin(Angle);
+ function pointToGrid(point) {
+ 	let gridHeight = arrows.length;
+ 	let gridWidth = arrows[0].length;
+ 	let h = height;
+ 	let w = width;
 
-	arrow(Pos.x, Pos.y, DirX, DirY, Mult);
-}
+ 	let heightIncrement = h/gridHeight + 5;
+ 	let widthIncrement = w/gridWidth + 5;
 
-function arrowVector(Pos, Dir, Mult) {
-	arrow(Pos.x, Pos.y, Dir.x, Dir.y, Mult);
-}
+ 	let refPoint = point.clone();
+ 	
+ 	let x = floor(refPoint.x / widthIncrement);
+ 	let y = floor(refPoint.y / heightIncrement);
+
+ 	refPoint = new Vector2(x, y);
+
+ 	return refPoint.clone();
+ }
