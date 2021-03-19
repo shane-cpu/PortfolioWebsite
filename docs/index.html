@@ -2,32 +2,28 @@
 <html lang="en">
 <head>
         <title>Welcome</title>
-        <link href="CSS/Home.css" rel="stylesheet">
+        <link href="CSS/MainTheme.css" rel="stylesheet">
         <link href="CSS/arcadeStyle.css" rel="stylesheet">
     </head>
-    <body style="margin:auto; background:#ffffff">
-        <div>
-            <ul style="background:#D96B14; margin:auto; list-style-type: none; height: 40px; padding: 0">
-                <li class="TopListOptions"><a class="TopListList" href="index.html">Arcade</a></li>
-                <li class="TopListOptions" id="U2"><a class="TopListList" href="Examples.html">Examples</a></li>
-                <li class="TopListOptions" id="l3"><a class="TopListList" href="About.html">About Me</a></li>
-            </ul>
+    <body style="margin:auto">
+        <div id="MainButton1" onclick="location.href='index.html';" class="MainButtons"><p>Arcade</p></div>
+        <div id="MainButton2" onclick="location.href='Examples.html';" class="MainButtons"><p>Examples</p></div>
+        <div id="MainButton3" onclick="location.href='About.html';" class="MainButtons"><p>About Me</p></div>
+        <div id="MyFace"></div>
+    	
+        <div style="margin: 0 25%; width:600px; height:220px; position: absolute; z-index: 1;">
+            <div id="Chec" class="gameIcon"></div>
+            <div id="Slap" class="gameIcon"></div>
+            <div id="Tank" class="gameIcon"></div>
         </div>
-	<div class="Title">
-	    <h1><center>Welcome To My Arcade!!!</center></h1>
-	</div>
-	<div style="margin: 0 auto; width:600px; height:220px;">
-	    <div id="Chec" class="gameIcon" style="background-image: url('imgs/Checkers.PNG'); background-position: center center; background-size: 200px 200px; margin-left: -5px"></div>
-        <div id="Slap" class="gameIcon" style="background-image: url('imgs/SlapHappy.PNG'); background-position: left top; background-size: 450px 300px; margin-left: 200px"></div>
-	    <div id="Tank" class="gameIcon" style="background-image: url('imgs/TankGame.PNG'); background-position: center center; background-size: 230px 200px; margin-left: 405px"></div>
-	</div>
-    <!-- <div style="margin: 0 auto; width:600px; height:220px;">
-        <div id="Chec" class="gameIcon" style="background-image: url('imgs/Checkers.PNG'); background-position: center center; background-size: 200px 200px; margin-left: -5px"></div>
-        <div id="Slap" class="gameIcon" style="background-image: url('imgs/SlapHappy.PNG'); background-position: left top; background-size: 450px 300px; margin-left: 200px"></div>
-        <div id="Tank" class="gameIcon" style="background-image: url('imgs/TankGame.PNG'); background-position: center center; background-size: 230px 200px; margin-left: 405px"></div>
-    </div> -->
-	<h1><center>More To Come...</center></h1>
-	<div style="width: auto; height: 150px"></div>
+
+    	<div  class="backgroundDiv" style="height: 200px; background: #F7AEF8;"></div>
+        <div  class="backgroundDiv" style="height: 200px; background: #B388EB;"></div>
+        <div  class="backgroundDiv" style="height: 200px; background: #8093F1;"></div>
+        <div  class="backgroundDiv" style="height: 200px; background: #9E0059;"></div>
+        <div  class="backgroundDiv" style="height: 200px; background: #FF0054;"></div>
+        <div  class="backgroundDiv" style="height: 200px; background: #FF5400;"></div>
+
 	</body>
     <script src="ExtraJS/Arcade.js"></script>
 </html>
