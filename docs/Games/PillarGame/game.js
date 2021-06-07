@@ -16,6 +16,8 @@
 // first we worry about pathfinding and ganeral charactor movement
 
 let entities = [];
+let gameGrid = [];
+
 let up = false;
 let left = false;
 let down = false;
@@ -24,6 +26,10 @@ let right = false;
 function setup()
 {
 	createCanvas(600, 600);
+
+	gameGrid = setupGrid(10, 10);
+	console.log(gameGrid);
+
 	
 	entities = addEntity( entities, 0, { x : 300, y : 300 } );
 	entities = addEntity( entities, 1, { x : 300, y : 300 } );
@@ -40,6 +46,8 @@ function draw()
 		{
 			case 0:
 				entity = playerMovement(entity);
+
+				let bla = queryGrid(gameGrid, entity.Pos, 600, 600, 10, 10)
 				break;
 			case 1:
 				entity = friendlyMovement(entity);

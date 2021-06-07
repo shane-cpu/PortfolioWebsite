@@ -30,24 +30,39 @@ function setupGrid(columns, rows)
 	return array.slice();
 }
 
-function displayTile(grid, loc)
+function displayTile(grid, loc, sizeX, sizeY)
 {
 
 	// some display logic that shows the location we are checking.
 
 }
 
-function queryGrid(grid, loc)
+// Unfinished
+function queryGrid(grid, loc, canvasX, canvasY, searchX, searchY)
 {
 	let entities = [];
 
+	// getting the cell size to get the conversion
+	let gridCellWidth = canvasX / grid.length;
+	let gridCellLength = canvasY / grid[0].length;
+
+	// converting the location to the grid cell coordinates 
+	let gridCellX = Math.floor( loc.x / gridCellWidth );
+	let gridCellY = Math.floor( loc.y / gridCellLength );
+
 	// query for the entities and add them to array.
+
 	// might also neew to change this to make this take in a search area.
 
 	return entities;
 }
 
-function updateGrid(grid, entities)
+function updateGrid(grid, entities, canvasX, canvasY)
 {
+
+
+
+
+
 	return grid;
 }
