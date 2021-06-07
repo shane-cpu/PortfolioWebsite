@@ -4,9 +4,13 @@ function sq(number) {
 	return number * number
 }
 
-// custom random flost function
+// custom random float function
 function randomRange(min, max) {
 	return (Math.random() * (max - min)) + min;
+}
+
+function randomRangeInt(min, max) {
+	return Math.floor(randomRange(min, max));
 }
 
 // custom 3D Vector class
@@ -48,7 +52,7 @@ class Vector3 {
 		return Math.sqrt(this.magSq());
 	}
 	normalize() {
-		this.mult(1/this.mag());
+		if (this.mag() != 0) this.mult(1/this.mag());
 	}
 	normalizeCopy() {
 		let Vec = this.clone();
@@ -109,7 +113,7 @@ class Vector2 {
 		return Math.sqrt(this.magSq());
 	}
 	normalize() {
-		this.mult(1/this.mag());
+		if (this.mag() != 0) this.mult(1/this.mag());
 	}
 	normalizeCopy() {
 		let Vec = this.clone();
