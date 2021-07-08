@@ -28,8 +28,6 @@ function setup()
 	createCanvas(600, 600);
 
 	gameGrid = setupGrid(10, 10);
-	console.log(gameGrid);
-
 	
 	entities = addEntity( entities, 0, { x : 300, y : 300 } );
 	entities = addEntity( entities, 1, { x : 300, y : 300 } );
@@ -40,6 +38,17 @@ function setup()
 function draw()
 {
 	background(0);
+
+	for (let x = 0; x < gameGrid.length; x++)
+	{
+		for (let y = 0; y < gameGrid[x].length; y++)
+		{
+			noFill();
+			stroke(255);
+			rect(x * (600/gameGrid.length) , y * (600/gameGrid[x].length), 600/gameGrid.length, 600/gameGrid[x].length);
+		}
+	}
+
 	entities.forEach( (entity) => {
 
 		switch (entity.ID)
@@ -47,7 +56,7 @@ function draw()
 			case 0:
 				entity = playerMovement(entity);
 
-				let bla = queryGrid(gameGrid, entity.Pos, 600, 600, 10, 10)
+				let bla = queryGrid(gameGrid, entity.Pos, 600, 600, 600/gameGrid.length, 600/gameGrid[0].length);
 				break;
 			case 1:
 				entity = friendlyMovement(entity);
@@ -56,7 +65,8 @@ function draw()
 				break;
 		}
 
-
+		fill(255);
+		stroke(0)
 		ellipse(entity.Pos.x, entity.Pos.y, 20, 20)
 	})
 }

@@ -50,9 +50,24 @@ function queryGrid(grid, loc, canvasX, canvasY, searchX, searchY)
 	let gridCellX = Math.floor( loc.x / gridCellWidth );
 	let gridCellY = Math.floor( loc.y / gridCellLength );
 
-	// query for the entities and add them to array.
+	searchX /= 2;
+	searchY /= 2;
 
-	// might also neew to change this to make this take in a search area.
+	// get the related grid cells
+	let cells = [
+		{ x : loc.x + searchX, y : loc.y + searchY},
+		{ x : loc.x - searchX, y : loc.y + searchY},
+		{ x : loc.x + searchX, y : loc.y - searchY},
+		{ x : loc.x - searchX, y : loc.y - searchY}
+	];
+
+	stroke(255);
+	rect(cells[3].x, cells[3].y, searchX * 2, searchY * 2);
+
+	// query the cells for nearby entities
+
+
+	// put nearby entities in array
 
 	return entities;
 }
