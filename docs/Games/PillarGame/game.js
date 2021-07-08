@@ -33,6 +33,8 @@ function setup()
 	entities = addEntity( entities, 1, { x : 300, y : 300 } );
 	entities = addEntity( entities, 1, { x : 300, y : 300 } );
 	entities = addEntity( entities, 1, { x : 300, y : 300 } );
+
+	gameGrid = updateGrid(gameGrid, entities, 600, 600)
 }
 
 function draw()
@@ -56,7 +58,7 @@ function draw()
 			case 0:
 				entity = playerMovement(entity);
 
-				let bla = queryGrid(gameGrid, entity.Pos, 600, 600, 600/gameGrid.length, 600/gameGrid[0].length);
+				// let bla = queryGrid(gameGrid, entity.Pos, 600, 600, 600/gameGrid.length, 600/gameGrid[0].length);
 				break;
 			case 1:
 				entity = friendlyMovement(entity);
@@ -68,7 +70,11 @@ function draw()
 		fill(255);
 		stroke(0)
 		ellipse(entity.Pos.x, entity.Pos.y, 20, 20)
-	})
+	});
+
+	gameGrid = updateGrid(gameGrid, entities, 600, 600)
+
+	// console.log(gameGrid + '');
 }
 
 function playerMovement(entity)

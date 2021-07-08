@@ -30,13 +30,6 @@ function setupGrid(columns, rows)
 	return array.slice();
 }
 
-function displayTile(grid, loc, sizeX, sizeY)
-{
-
-	// some display logic that shows the location we are checking.
-
-}
-
 // Unfinished
 function queryGrid(grid, loc, canvasX, canvasY, searchX, searchY)
 {
@@ -53,7 +46,7 @@ function queryGrid(grid, loc, canvasX, canvasY, searchX, searchY)
 	searchX /= 2;
 	searchY /= 2;
 
-	// get the related grid cells
+	// get the related grid cells // needs to be reworked to get all the cells in between these points
 	let cells = [
 		{ x : loc.x + searchX, y : loc.y + searchY},
 		{ x : loc.x - searchX, y : loc.y + searchY},
@@ -65,19 +58,34 @@ function queryGrid(grid, loc, canvasX, canvasY, searchX, searchY)
 	rect(cells[3].x, cells[3].y, searchX * 2, searchY * 2);
 
 	// query the cells for nearby entities
+	for (let cell = 0; cell < cells.length; cell++)
+	{
+		cells[cell].x = Math.floor( cells[cell].x / gridCellWidth );
+		cells[cell].y = Math.floor( cells[cell].y / gridCellWidth );
 
-
-	// put nearby entities in array
+		// put nearby entities in array
+		entities = entities.concat(grid[cells[cell].x][cells[cell].y]);
+	}
 
 	return entities;
 }
 
 function updateGrid(grid, entities, canvasX, canvasY)
 {
+	grid = setupGrid(grid.length, grid[0].length);
 
+	// getting the cell size to get the conversion
+	let gridCellWidth = canvasX / grid.length;
+	let gridCellLength = canvasY / grid[0].length;
 
+	for (let i = 0; i < entities.length; i++)
+	{
+		// converting the location to the grid cell coordinates 
+		let gridCellX = Math.floor( entities[i].Pos.x / gridCellWidth );
+		let gridCellY = Math.floor( entities[i].Pos.y / gridCellLength );
 
-
+		grid[gridCellX][gridCellY].push(entities[i]);
+	}
 
 	return grid;
 }
