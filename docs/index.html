@@ -1,29 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <title>Welcome</title>
         <link href="CSS/MainTheme.css" rel="stylesheet">
         <link href="CSS/arcadeStyle.css" rel="stylesheet">
     </head>
     <body style="margin:auto">
-        <div id="MainButton1" onclick="location.href='index.html';" class="MainButtons"><p>Arcade</p></div>
-        <div id="MainButton2" onclick="location.href='Examples.html';" class="MainButtons"><p>Examples</p></div>
-        <div id="MainButton3" onclick="location.href='About.html';" class="MainButtons"><p>About Me</p></div>
-        <div id="MyFace"></div>
-    	
-        <div style="margin: 0 25%; width:600px; height:220px; position: absolute; z-index: 1;">
-            <div id="Chec" class="gameIcon"></div>
-            <div id="Slap" class="gameIcon"></div>
-            <div id="Tank" class="gameIcon"></div>
+        <div id="SideBar">
+            <div id="MainButton1" onclick="location.href='index.html';" class="MainButtons"><p>Arcade</p></div>
+            <div id="MainButton2" onclick="location.href='Examples.html';" class="MainButtons"><p>Examples</p></div>
+            <div id="MainButton3" onclick="location.href='About.html';" class="MainButtons"><p></p></div>
         </div>
 
-    	<div  class="backgroundDiv" style="height: 200px; background: #F7AEF8;"></div>
-        <div  class="backgroundDiv" style="height: 200px; background: #B388EB;"></div>
-        <div  class="backgroundDiv" style="height: 200px; background: #8093F1;"></div>
-        <div  class="backgroundDiv" style="height: 200px; background: #9E0059;"></div>
-        <div  class="backgroundDiv" style="height: 200px; background: #FF0054;"></div>
-        <div  class="backgroundDiv" style="height: 200px; background: #FF5400;"></div>
+        <ul id="ItemList">
+            <li class="ListItems" id="Chec"><div class="ListItemsGrayFilter"></div></li>
+            <li class="ListItems" id="Slap"><div class="ListItemsGrayFilter"></div></li>
+            <li class="ListItems" id="Tank"><div class="ListItemsGrayFilter"></div></li>
+        </ul>
 
 	</body>
-    <script src="ExtraJS/Arcade.js"></script>
+    <script src="ExtraJS/MainButtonFunction.js"></script>
 </html>

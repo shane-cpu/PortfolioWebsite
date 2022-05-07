@@ -1,61 +1,70 @@
 body {
     margin: auto;
-    background: #F8E6AE;
-    
-}
-.backgroundDiv {
-    
+    background: #fff;
 }
 
-#MyFace {
-    background-image: url('../imgs/image0.jpg');
-    background-size: cover;
-    border-radius: 50%;
-    height: 150px;
-    margin: 0 auto;
-    position: fixed;
-    transition: width .5s, height .5s;
-    width: 150px;
-    z-index: 12;
+
+#SideBar {
+    background-color: black;
+    height: 100%;
+    position: absolute;
+    width: 60px;
 }
-#MyFace:hover {
-    height: 180px;
-    width: 180px;
-}
+
+
 .MainButtons {
-    background-color: #72DDF7;
+    background-color: #fff;
     border-radius: 50%;
     cursor: pointer;
-    height: 80px;
-    position: fixed;
+    height: 57px;
+    position: relative;
     text-align: center;
-    transition: height .5s, width .5s;
-    width: 80px;
-}
-.MainButtons:hover {
-    height: 120px;
-    width: 120px;
+    width: 95%;
 }
 .MainButtons p {
-    font-size: medium;
+    font-size: small;
     left: 50%;
     margin: 0;
     position: absolute;
     top: 50%;
     transform: translate(-50%, -50%);
 }
+
+
 #MainButton1 {
-    top: 130px;
-    left: 130px;
-    z-index: 12;
+    top: 10px;
+    left: 0%;
 }
 #MainButton2 {
-    top: 30px;
-    left: 180px;
-    z-index: 12;
+    top: 20px;
+    left: 0%;
 }
 #MainButton3 {
-    top: 180px;
-    left: 30px;
-    z-index: 12;
+    background-image: url('../imgs/image0.jpg');
+    background-size: cover;
+    top: 30px;
+    left: 0%;
+}
+
+
+#ItemList {
+    left: 60px;
+    margin-top: 0px;
+    padding: 0px;
+    position: absolute;
+    text-decoration: none;
+    width: calc(100% - 60px);
+}
+.ListItems {
+    background-color: #fff;
+    display: inline-block;
+    float: right;
+    height: 250px;
+    vertical-align: center;
+    width: 100%;
+}
+.ListItemsGrayFilter {
+    background-color: #0001;
+    height: 100%;
+    width: 100%;
 }

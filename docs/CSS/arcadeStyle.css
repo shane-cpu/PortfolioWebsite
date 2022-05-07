@@ -9,45 +9,26 @@
 
 
 #TWODB {
-	background-image: url('imgs/2DBoid.png');
-	background-position: center center;
-	background-size: 200px 200px;
-	margin-left: -5px;
-
+	background-image: url('../imgs/2DBoid.png');
 }
 
 #THREEDB {
-	background-image: url('imgs/3DBoid.PNG');
-	background-position: left top;
-	background-size: 200px 200px;
-	margin-left: 200px;
+	background-image: url('../imgs/3DBoid.PNG');
 }
 
 #FFD {
-	background-image: url('imgs/FlowField.PNG');
-	background-position: left top;
-	background-size: 200px 200px;
-	margin-left: 405px;
+	background-image: url('../imgs/FlowField.PNG');
 }
 
 
 #Chec {
-	background-image: url('imgs/Checkers.PNG');
-	background-position: center center;
-	background-size: 200px 200px;
-	margin-left: -5px;
+	background-image: url('../imgs/Checkers.PNG');
 }
 
 #Slap {
-	background-image: url('imgs/SlapHappy.PNG')
-	background-position: left top;
-	background-size: 450px 300px;
-	margin-left: 200px;
+	background-image: url('../imgs/SlapHappy.PNG')
 }
 
 #Tank {
-	background-image: url('imgs/TankGame.PNG');
-	background-position: center center;
-	background-size: 230px 200px;
-	margin-left: 405px;
+	background-image: url('../imgs/TankGame.PNG');
 }
