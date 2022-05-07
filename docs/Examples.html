@@ -1,16 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <title>Welcome</title>
         <link href="CSS/MainTheme.css" rel="stylesheet">
         <link href="CSS/arcadeStyle.css" rel="stylesheet">
     </head>
     <body style="margin:auto">
-        <div id="MainButton1" onclick="location.href='index.html';" class="MainButtons"><p>Arcade</p></div>
-        <div id="MainButton2" onclick="location.href='Examples.html';" class="MainButtons"><p>Examples</p></div>
-        <div id="MainButton3" onclick="location.href='About.html';" class="MainButtons"><p>About Me</p></div>
-        <div id="MyFace"></div>
-        
-        <script src="ExtraJS/Example.js"></script>
+        <div id="SideBar">
+            <div id="MainButton1" onclick="location.href='index.html';" class="MainButtons"><p>Arcade</p></div>
+            <div id="MainButton2" onclick="location.href='Examples.html';" class="MainButtons"><p>Examples</p></div>
+            <div id="MainButton3" onclick="location.href='About.html';" class="MainButtons"><p></p></div>
+        </div>
+
+        <ul id="ItemList">
+            <li class="ListItems" id="2DB"></li>
+            <li class="ListItems" id="3DB"></li>
+            <li class="ListItems" id="FFD"></li>
+        </ul>
+
 	</body>
+    <script src="ExtraJS/MainButtonFunction.js"></script>
 </html>
