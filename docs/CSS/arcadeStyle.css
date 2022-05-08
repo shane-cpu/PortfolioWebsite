@@ -1,13 +1,3 @@
-.gameIcon {
-	border-radius: 30px;
-	border-style: solid;
-	border-color: white;
-	width: 200px;
-	height:200px;
-	position: absolute;
-}
-
-
 #TWODB {
 	background-image: url('../imgs/2DBoid.png');
 }

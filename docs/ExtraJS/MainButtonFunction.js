@@ -1,5 +1,5 @@
 
-let TDB = document.getElementById("2DB");
+let TDB = document.getElementById("TWODB");
 if (TDB)
 {
 	TDB.addEventListener("click", function() {
@@ -13,7 +13,7 @@ if (TDB)
 	// });
 }
 
-let THDB = document.getElementById("3DB");
+let THDB = document.getElementById("THREEDB");
 if (THDB)
 {
 	THDB.addEventListener("click", function() {

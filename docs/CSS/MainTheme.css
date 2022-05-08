@@ -1,13 +1,15 @@
 body {
     margin: auto;
-    background: #fff;
+    background: #eee;
 }
 
 
 #SideBar {
     background-color: black;
     height: 100%;
+    left: 0%;
     position: absolute;
+    top: 0%;
     width: 60px;
 }
 
@@ -32,10 +34,12 @@ body {
 
 
 #MainButton1 {
+    background-color: #eee;
     top: 10px;
     left: 0%;
 }
 #MainButton2 {
+    background-color: #eee;
     top: 20px;
     left: 0%;
 }
@@ -48,8 +52,10 @@ body {
 
 
 #ItemList {
+    height: 100%;
     left: 60px;
     margin-top: 0px;
+    overflow-y: auto;
     padding: 0px;
     position: absolute;
     text-decoration: none;
@@ -57,14 +63,32 @@ body {
 }
 .ListItems {
     background-color: #fff;
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: contain;
     display: inline-block;
     float: right;
     height: 250px;
+    transition: height 0.5s;
     vertical-align: center;
     width: 100%;
 }
+.ListItems:hover {
+    height: 300px;
+}
 .ListItemsGrayFilter {
-    background-color: #0001;
+    background-image: linear-gradient(#0003, #0008);
     height: 100%;
+    position: relative;
+    transition: background-image 0.5s;
     width: 100%;
+}
+.ListItemsGrayFilter:hover {
+    background-image: linear-gradient(#0002, #0007);
+}
+.ListItemsLabel {
+    color: white;
+    font-size: 64px;
+    position: relative;
+    top: 65%;
 }
