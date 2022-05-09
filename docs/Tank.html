@@ -1,22 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+    <head>
         <link href="CSS/MainTheme.css" rel="stylesheet">
+        <link href="Games/TankGameCSS/TankGameCSS.css" rel="stylesheet">
     </head>
     <body style="margin:auto; background:#ffffff">
-        <div id="MainButton1" onclick="location.href='index.html';" class="MainButtons"><p>Arcade</p></div>
-        <div id="MainButton2" onclick="location.href='Examples.html';" class="MainButtons"><p>Examples</p></div>
-        <div id="MainButton3" onclick="location.href='About.html';" class="MainButtons"><p>About Me</p></div>
-        <div id="MyFace"></div>
+        <div id="SideBar">
+            <div id="MainButton1" onclick="location.href='index.html';" class="MainButtons"><p>Arcade</p></div>
+            <div id="MainButton2" onclick="location.href='Examples.html';" class="MainButtons"><p>Examples</p></div>
+            <div id="MainButton3" onclick="location.href='About.html';" class="MainButtons"><p></p></div>
+        </div>
 
-        <style> canvas { display: block; margin: auto; }</style>
+        <style>
+        canvas {
+            left: 50%;
+            position: absolute;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+        </style>
 
-        <div id="infoTank">
-            <p class="infoTank">Tank Game</p>
-            <p class="infoTank">Press forward(w) or backward(s) to drive around</p>
-            <p class="infoTank">Press left(a) or right(d) to turn</p>
-            <p class="infoTank">Press space to jump (I put this in before I made it a tank)</p>
-            <p class="infoTank">Press j to shoot</p>
+        <div id="gameHolder">
+            <div id="infoTank">
+                <p>Tank Game</p>
+                <p>Press forward(w) or backward(s) to drive around</p>
+                <p>Press left(a) or right(d) to turn</p>
+                <p>Press space to jump (I put this in before I made it a tank)</p>
+                <p>Press j to shoot</p>
+            </div>
         </div>
     </body>
     <footer>
