@@ -22,6 +22,7 @@ body {
     position: relative;
     text-align: center;
     width: 95%;
+    z-index: 3;
 }
 .MainButtons p {
     font-size: small;
@@ -34,12 +35,14 @@ body {
 
 
 #MainButton1 {
-    background-color: #eee;
+    background-image: url('../imgs/ArcadeIcon.png');
+    background-size: cover;
     top: 10px;
     left: 0%;
 }
 #MainButton2 {
-    background-color: #eee;
+    background-image: url('../imgs/ResearchIcon.png');
+    background-size: cover;
     top: 20px;
     left: 0%;
 }
@@ -50,6 +53,19 @@ body {
     left: 0%;
 }
 
+#TopOrange {
+    background-color: #FEAB1D;
+    height: 50%;
+    position: absolute;
+    width: 100%;
+}
+#BottomBlue {
+    background-color: #1DB9FE;
+    height: 50%;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+}
 
 #ItemList {
     height: 100%;

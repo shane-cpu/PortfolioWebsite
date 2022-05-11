@@ -41,6 +41,20 @@ if (FFD)
 	// });
 }
 
+let PDM = document.getElementById("PDM");
+if (PDM)
+{
+	PDM.addEventListener("click", function() {
+	    location.replace("proceduralTest.html")
+	});
+	// FFD.addEventListener("mouseenter", function() {
+	//     document.getElementById("FFD").style.borderColor = "orange";
+	// });
+	// FFD.addEventListener("mouseleave", function() {
+	//     document.getElementById("FFD").style.borderColor = "white";
+	// });
+}
+
 let Checkers = document.getElementById("Chec");
 if (Checkers)
 {
