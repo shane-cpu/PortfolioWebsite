@@ -3,8 +3,14 @@ let boids = [];
 let velocity = [];
 let acceleration = [];
 
+let pFiveCanvas
+
 function setup() {
-	createCanvas(600, 600);
+	pFiveCanvas = createCanvas(600, 600);
+
+	let canvasHolder = document.getElementById("canvasHolder")
+
+	canvasHolder.appendChild(pFiveCanvas.canvas);
 
 	for (let i = 0; i < 200; i++) {
 		boids[i] = new Vector2(randomRange(0, 600), randomRange(0, 600));

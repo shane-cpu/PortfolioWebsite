@@ -16,7 +16,9 @@ let mouseDown = false;
 let increment = 0.05;
 
 function setup() {
-	createCanvas(600, 600);
+	let mainCanvas = createCanvas(600, 600);
+
+	document.getElementById("canvasHolder").appendChild(mainCanvas.canvas);
 
 	let offsetX = 10;
 	let offsetY = 10;

@@ -11,7 +11,7 @@
 
 // We'll tweak these rules as we go to make things more specific and interesting.
 
-let canvisSize = 660;
+let canvisSize = 600;
 
 // define the level itself
 let level = [];
@@ -22,7 +22,10 @@ let roomSize = 15;
 // set up the generation
 function setup()
 {
-	createCanvas(canvisSize, canvisSize);
+	let mainCanvas = createCanvas(canvisSize, canvisSize);
+
+	document.getElementById("canvasHolder").appendChild(mainCanvas.canvas);
+
 	background(0);
 	generateLevel();
 }

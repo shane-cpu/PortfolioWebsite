@@ -6,7 +6,7 @@ class Scene {
 		this.scene.background = new THREE.Color('cyan');
 		this.renderer = new THREE.WebGLRenderer(); // selecting the WebGLRenderer to render the 3D objects
 		this.renderer.setSize(800, 600); // setting the size of the rendered window
-		document.body.appendChild(this.renderer.domElement); // put the window in the html document
+		document.getElementById("canvasHolder").appendChild(this.renderer.domElement); // put the window in the html document
 
 		this.planeGeo = new THREE.PlaneGeometry(40, 40, 1, 1);
 		this.planeMat = new THREE.MeshPhongMaterial( {color: 0x999999} );
