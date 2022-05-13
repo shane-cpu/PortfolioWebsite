@@ -1,0 +1,78 @@
+
+#inner-Board {
+    background: #fff;
+    width: 600px;
+    height: 600px;
+    margin: 48px;
+    position: absolute;
+}
+
+#Outer-Board {
+    background: #fff;
+    border: solid #000;
+    width: 700px;
+    height: 700px;
+    margin: auto;
+}
+
+#inner-Board div {
+    width: 75px;
+    height: 75px;
+    position: absolute;
+}
+
+#inner-Board .Tileblack {
+    background: #000;
+    border: solid #000;
+}
+
+#inner-Board .Tilewhite {
+    background: #fff;
+    border: solid #000;
+}
+
+#inner-Board .PieceRed{
+    background: rgb(255,0,0);
+    margin: 6px;
+    border-radius: 65px;
+    width: 65px;
+    height: 65px;
+    position: absolute;
+    transition-property: all;
+    transition-duration: 1s;
+}
+
+#inner-Board .PieceWhite{
+    background: rgb(255,255,255);
+    margin: 6px;
+    border-radius: 65px;
+    width: 65px;
+    height: 65px;
+    position: absolute;
+    transition-property: all;
+    transition-duration: 1s;
+}
+
+#inner-Board .Buttonblack{
+    background: rgba(0,0,0,0);
+}
+
+#inner-Board .Buttonblack:hover{
+    background: rgba(255, 255, 0, 0.56);
+}
+
+#inner-Board #l1 {
+    background: rgb(0, 0, 167);
+}
+
+#inner-Board #l1:hover {
+    background: rgb(2, 2, 201);
+}
+
+#inner-Board #l2 {
+    background: rgb(0, 0, 167);
+}
+
+#inner-Board #l2:hover {
+    background: rgb(2, 2, 201);
+}

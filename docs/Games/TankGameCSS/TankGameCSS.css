@@ -1,0 +1,7 @@
+
+#infoTank {
+	left: 50%;
+	position: absolute;
+	top: calc(50% + 100px);
+	z-index: 2;
+}

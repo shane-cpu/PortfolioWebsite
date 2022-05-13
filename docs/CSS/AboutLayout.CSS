@@ -1,0 +1,145 @@
+#AboutMainPanel p {
+    height: 90%;
+    left: 50%;
+    line-height: 1.5;
+    position: absolute;
+    top: 45%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+}
+
+#AboutMainPanel {
+    /*border-color: black;
+    border-style: solid;*/
+    font-family: Arial, Helvetica, sans-serif;
+    height: 50%;
+    left: calc(50%);
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+}
+
+#AboutMainLabel {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    font-size: 32px;
+    height: 50px;
+    left: 50%;
+    line-height: 1.5;
+    position: absolute;
+    text-align: center;
+    top: -11%;
+    transform: translate(-50%, 0%);
+    width: 200px;
+}
+
+#AboutPrimaryDescriptionBox {
+    background-color: #FEAB1D;
+    border-top-right-radius: 30px;
+    border-top-left-radius: 30px;
+    height: 250px;
+    left: 50%;
+    position: absolute;
+    top: 0%;
+    transform: translate(-50%, 0%);
+    width: 500px;
+}
+
+#AboutPrimaryDescription {
+    background-color: #FFC665;
+    border-radius: 30px;
+    height: 200px;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+}
+
+#AboutPrimaryImageBox {
+    background-color: #FEAB1D;
+    border-bottom-left-radius: 30px;
+    border-top-left-radius: 30px;
+    height: 150px;
+    left: -65px;
+    position: absolute;
+    top: 50%;
+    transition: height 0.5s, left 0.5s, width 0.5s;
+    transform: translate(-50%, -50%);
+    width: 150px;
+}
+#AboutPrimaryImageBox:hover {
+    height: 200px;
+    left: -90px;
+    position: absolute;
+    width: 200px;
+}
+
+#AboutPrimaryImage {
+    border-bottom-left-radius: 30px;
+    background-image: url("../imgs/Selfy1.jpg");
+    background-size: contain;
+    border-top-left-radius: 30px;
+    height: 80%;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+}
+
+#AboutSecondaryDescriptionBox {
+    background-color: #1DB9FE;
+    border-bottom-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+    height: 250px;
+    left: 50%;
+    position: absolute;
+    top: 250px;
+    transform: translate(-50%, 0%);
+    width: 500px;
+}
+
+#AboutSecondaryDescription {
+    background-color: #6CD2FF;
+    border-radius: 30px;
+    height: 200px;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+}
+
+#AboutSecondaryImageBox {
+    background-color: #1DB9FE;
+    border-bottom-right-radius: 30px;
+    border-top-right-radius: 30px;
+    height: 150px;
+    left: calc(100% + 65px);
+    position: absolute;
+    top: 50%;
+    transition: height 0.5s, left 0.5s, width 0.5s;
+    transform: translate(-50%, -50%);
+    width: 150px;
+}
+#AboutSecondaryImageBox:hover {
+    height: 200px;
+    left: calc(100% + 90px);
+    position: absolute;
+    width: 200px;
+}
+
+#AboutSecondaryImage {
+    border-bottom-right-radius: 30px;
+    background-image: url("../imgs/AnimeDonut.png");
+    background-size: contain;
+    border-top-right-radius: 30px;
+    height: 80%;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+}
