@@ -1,27 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-        <title>Welcome</title>
-        <link href="CSS/Home.css" rel="stylesheet">
+    <head>
+        <link href="CSS/MainTheme.css" rel="stylesheet">
+        <link href="Games/TankGameCSS/TankGameCSS.css" rel="stylesheet">
     </head>
-    <body style="margin:auto; overflow: hidden; background:#ffffff">
-        <div>
-            <ul style="background:#D96B14; margin:auto; list-style-type: none; height: 40px; padding: 0">
-                <li class="TopListOptions"><a class="TopListList" href="index.html">Arcade</a></li>
-                <li class="TopListOptions" id="U2"><a class="TopListList" href="Examples.html">Examples</a></li>
-                <li class="TopListOptions" id="l3"><a class="TopListList" href="About.html">About Me</a></li>
-            </ul>
+    <body style="margin:auto; background:#ffffff">
+        <div id="SideBar">
+            <div id="TopOrange"></div>
+            <div id="BottomBlue"></div>
+            <div id="MainButton1" onclick="location.href='index.html';" class="MainButtons"><p></p></div>
+            <div id="MainButton2" onclick="location.href='Examples.html';" class="MainButtons"><p></p></div>
+            <div id="MainButton3" onclick="location.href='About.html';" class="MainButtons"><p></p></div>
         </div>
-	   <style> canvas { display: block; margin: auto; }</style>
 
-        <div id="infoTank">
-            <p class="infoTank">Tank Game</p>
-            <p class="infoTank">Press forward(w) or backward(s) to drive around</p>
-            <p class="infoTank">Press left(a) or right(d) to turn</p>
-            <p class="infoTank">Press space to jump (I put this in before I made it a tank)</p>
-            <p class="infoTank">Press j to shoot</p>
+        <style>
+        canvas {
+            left: 50%;
+            position: absolute;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+        </style>
+
+        <div id="gameHolder">
+            <div id="infoTank">
+                <p>Tank Game</p>
+                <p>Press forward(w) or backward(s) to drive around</p>
+                <p>Press left(a) or right(d) to turn</p>
+                <p>Press space to jump (I put this in before I made it a tank)</p>
+                <p>Press j to shoot</p>
+            </div>
         </div>
-	</body>
+    </body>
     <footer>
         <script src="Modules/three.js"></script>
         <script src="Games/TankGameJS/keyboard.js"></script>

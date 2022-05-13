@@ -1,32 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-        <title>Welcome</title>
-        <link href="CSS/Home.css" rel="stylesheet">
+    <head>
+        <link href="CSS/MainTheme.css" rel="stylesheet">
+        <link href="Games/BeatEmUpCSS/BeatEmUpCSS.css" rel="stylesheet">
     </head>
     <body style="margin:auto; background:#ffffff">
-        <div>
-            <ul style="background:#D96B14; margin:auto; list-style-type: none; height: 40px; padding: 0">
-                <li class="TopListOptions"><a class="TopListList" href="index.html">Arcade</a></li>
-                <li class="TopListOptions" id="U2"><a class="TopListList" href="Examples.html">Examples</a></li>
-                <li class="TopListOptions" id="l3"><a class="TopListList" href="About.html">About Me</a></li>
-            </ul>
+        <div id="SideBar">
+            <div id="TopOrange"></div>
+            <div id="BottomBlue"></div>
+            <div id="MainButton1" onclick="location.href='index.html';" class="MainButtons"><p></p></div>
+            <div id="MainButton2" onclick="location.href='Examples.html';" class="MainButtons"><p></p></div>
+            <div id="MainButton3" onclick="location.href='About.html';" class="MainButtons"><p></p></div>
         </div>
-    	<canvas id="game" width="800px" height="500px"></canvas>
-            
-        <div id="Instructions">
-            <ul style="float: left; color: white">
-                <li>WASD to move.</li>
-                <li>E to punch.</li>
-                <li>F to kick.</li>
-                <li>Space to jump.</li>
-            </ul>
-            <ul style="float: left; color: white">
-                <li>Combo List:</li>
-                <li>E,E</li>
-                <li>E,E,Space</li>
-                <li>Falling, F</li>
-            </ul>
+        
+        <div id="gameContaner">
+        	<canvas id="game" height="500px" width="800px"></canvas>
+
+            <div id="Instructions">
+                <ul style="float: left; color: white">
+                    <li>WASD to move.</li>
+                    <li>E to punch.</li>
+                    <li>F to kick.</li>
+                    <li>Space to jump.</li>
+                </ul>
+                <ul style="float: left; color: white">
+                    <li>Combo List:</li>
+                    <li>E,E</li>
+                    <li>E,E,Space</li>
+                    <li>Falling, F</li>
+                </ul>
+            </div>
         </div>
 	</body>
     <footer>

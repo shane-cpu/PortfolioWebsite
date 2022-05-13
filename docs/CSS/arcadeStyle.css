@@ -1,8 +1,24 @@
-.gameIcon {
-	border-radius: 30px;
-	border-style: solid;
-	border-color: white;
-	width: 200px;
-	height:200px;
-	position: absolute;
+#TWODB {
+	background-image: url('../imgs/2DBoid.png');
+}
+
+#THREEDB {
+	background-image: url('../imgs/3DBoid.PNG');
+}
+
+#FFD {
+	background-image: url('../imgs/FlowField.PNG');
+}
+
+
+#Chec {
+	background-image: url('../imgs/Checkers.PNG');
+}
+
+#Slap {
+	background-image: url('../imgs/SlapHappy.PNG')
+}
+
+#Tank {
+	background-image: url('../imgs/TankGame.PNG');
 }

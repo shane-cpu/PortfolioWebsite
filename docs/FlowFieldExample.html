@@ -1,19 +1,21 @@
-
 <!DOCTYPE html>
 <html lang="en">
-<head>
-        <title>Welcome</title>
-        <link href="CSS/Home.css" rel="stylesheet">
+    <head>
+        <link href="CSS/MainTheme.css" rel="stylesheet">
+        <link href="CSS/Example.css" rel="stylesheet">
     </head>
     <body style="margin:auto; background:#ffffff">
-        <div>
-            <ul style="background:#D96B14; margin:auto; list-style-type: none; height: 40px; padding: 0">
-                <li class="TopListOptions"><a class="TopListList" href="index.html">Arcade</a></li>
-                <li class="TopListOptions" id="U2"><a class="TopListList" href="Examples.html">Examples</a></li>
-                <li class="TopListOptions" id="l3"><a class="TopListList" href="About.html">About Me</a></li>
-            </ul>
+        <div id="SideBar">
+            <div id="TopOrange"></div>
+            <div id="BottomBlue"></div>
+            <div id="MainButton1" onclick="location.href='index.html';" class="MainButtons"><p></p></div>
+            <div id="MainButton2" onclick="location.href='Examples.html';" class="MainButtons"><p></p></div>
+            <div id="MainButton3" onclick="location.href='About.html';" class="MainButtons"><p></p></div>
         </div>
-	</body>
+        <div id="canvasHolder" style="height: 700px; width: 700px;">
+            <h1 style="color: #fff; left: 50%; position: absolute; text-align: center; top: 0%; transform: translate(-50%, -50%); width: 700px;">Here Is A Flow Field Example (Click The Arrows)</h1>
+        </div>
+    </body>
     <footer>
         <script src="Modules/p5.js"></script>
         <script src="Modules/CustomVector.js"></script>

@@ -1,34 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-        <title>Welcome</title>
-        <link href="CSS/Home.css" rel="stylesheet">
+    <head>
+        <link href="CSS/MainTheme.css" rel="stylesheet">
+        <link href="CSS/AboutLayout.css" rel="stylesheet">
     </head>
-    <body style="margin:auto; background:#ffffff">
-        <div>
-            <ul style="background:#D96B14; margin:auto; list-style-type: none; height: 40px; padding: 0">
-                <li class="TopListOptions"><a class="TopListList" href="index.html">Arcade</a></li>
-                <li class="TopListOptions" id="U2"><a class="TopListList" href="Examples.html">Examples</a></li>
-                <li class="TopListOptions" id="l3"><a class="TopListList" href="About.html">About Me</a></li>
-            </ul>
+    <body>
+        <div id="SideBar">
+            <div id="TopOrange"></div>
+            <div id="BottomBlue"></div>
+            <div id="MainButton1" onclick="location.href='index.html';" class="MainButtons"><p></p></div>
+            <div id="MainButton2" onclick="location.href='Examples.html';" class="MainButtons"><p></p></div>
+            <div id="MainButton3" onclick="location.href='About.html';" class="MainButtons"><p></p></div>
         </div>
-	<div class="Title">
-        <h1><center>About Me:</center></h1>
-    </div>
-        <div style="background:#ffffff; border: solid; border-color: black ;margin: 0 auto; width: 500px; border-radius: 20px; font-family: sans-serif">
-            <h1 style="line-height: 50px"><center>Hey I'm Shane Thornton</center></h1>
-            <p style="padding: 0 15px; line-height: 20px"><center>I'm a User Experience Developer at Yeti CGI.</center></p>
-            <img src="imgs/image0.jpg" style="width:300px; margin: 0 20%;"/>
-            <h1><center>Who am I?</center></h1>
-            <p style="padding: 0 15px; line-height: 20px">I'm a programmer from the middle of nowhere.</p>
-            <p style="padding: 0 15px; line-height: 20px">
-            I've been going to college for 5 years now and I'm about ready to graduate with a bachelors degree in applied science. Spring 2021 is the semester in question so I'm super excited.
-            </p>
-            <p style="padding: 0 15px; line-height: 20px">
-            For the past six months I've been honing my skills in the hopes of making myself more capable. Here's to hoping I can make it.
-            </p>
-            <br/>
+
+        <div id="AboutMainPanel">
+            <div id="AboutMainLabel">About Me</div>
+            <div id="AboutPrimaryDescriptionBox">
+                <div id="AboutPrimaryImageBox">
+                    <div id="AboutPrimaryImage"></div>
+                </div>
+                <div id="AboutPrimaryDescription">
+                    <p>
+                        Hey My Name Is Shane Thornton.
+                        I've been a web developer making ambient user experiences sense 2020.
+                        I went to school for game design but my day job is making multiplayer 3D web experiences for large companies.
+                        This website is more or less a fun side project for me and I plan on filling it with some demos for projects I build for my own curiosity.
+                    </p>
+                </div>
+            </div>
+
+            <div id="AboutSecondaryDescriptionBox">
+                <div id="AboutSecondaryImageBox">
+                    <div id="AboutSecondaryImage"></div>
+                </div>
+                <div id="AboutSecondaryDescription">
+                    <p>
+                        My main job may be web development but I've been slowly putting together projects on the side for the eventual game development group "Pastry Corp".
+                        As to why I use donuts' for my artistic endevers is anyone's guess lol.
+                        I'm just working to complete the many projects I've been planning out in my head for years.
+                        Take a look around and see if there is anything you like :)
+                    </p>
+                </div>
+            </div>
         </div>
-	<div style="width: auto; height: 150px"></div>
 	</body>
 </html>

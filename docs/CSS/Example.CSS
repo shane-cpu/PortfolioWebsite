@@ -1,0 +1,16 @@
+
+#canvasHolder {
+	background-color: #1DB9FE;
+	border-radius: 30px;
+	left: 50%;
+	position: absolute;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+canvas {
+	left: 50%;
+	position: absolute;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
