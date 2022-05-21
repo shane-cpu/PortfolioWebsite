@@ -246,7 +246,16 @@ function generatePathing(point)
 	}
 }
 
-function mousePressed() {
+function mousePressed()
+{
+	if (mouseX >= 0 && mouseX <= width && mouseY >= 0 && mouseY <= height)
+	{
+		generatePathing(pointToGrid(new Vector2(mouseX, mouseY)));
+	}
+}
+
+function touchStarted()
+{
 	if (mouseX >= 0 && mouseX <= width && mouseY >= 0 && mouseY <= height)
 	{
 		generatePathing(pointToGrid(new Vector2(mouseX, mouseY)));
