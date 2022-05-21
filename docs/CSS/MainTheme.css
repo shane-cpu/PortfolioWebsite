@@ -1,6 +1,6 @@
 body {
     margin: auto;
-    background: #eee;
+    background: #333;
 }
 
 
@@ -68,6 +68,7 @@ body {
 }
 
 #ItemList {
+    background-color: #333333;
     height: 100%;
     left: 60px;
     margin-top: 0px;
@@ -78,12 +79,13 @@ body {
     width: calc(100% - 60px);
 }
 .ListItems {
-    background-color: #fff;
+    background-color: #333333;
     background-position: right;
     background-repeat: no-repeat;
     background-size: contain;
     display: inline-block;
     float: right;
+    font-family: Arial, Helvetica, sans-serif;
     height: 250px;
     transition: height 0.5s;
     vertical-align: center;

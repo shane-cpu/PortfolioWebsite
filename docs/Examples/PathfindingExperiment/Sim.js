@@ -7,6 +7,7 @@
 
 let arrows = [];
 let vectors = [];
+let costGrid = [];
 
 let xSections = 20;
 let ySections = 20;
@@ -58,7 +59,18 @@ function draw()
 
 			// vectors[i][j] = dir;
 
-			arrow(arrows[i][j].x, arrows[i][j].y, vectors[i][j].x, vectors[i][j].y, offset);
+			if (costGrid[i][j] == 0)
+			{
+				stroke("#fff");
+				fill("#fff");
+				ellipse(arrows[i][j].x, arrows[i][j].y, 10);
+			}
+			else
+			{
+				stroke("#fff");
+				strokeWeight(2);
+				arrow(arrows[i][j].x, arrows[i][j].y, vectors[i][j].x, vectors[i][j].y, offset);
+			}
 		}
 	}
 
@@ -76,7 +88,7 @@ function generatePathing(point)
 	let totalSections = (xSections * ySections);
 	let checkedSections = 0;
 
-	let costGrid = [];
+	costGrid = [];
 	let checkingGrid = [];
 
 	for (let i = 0; i < arrows.length; i++)

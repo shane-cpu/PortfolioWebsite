@@ -55,6 +55,20 @@ if (PDM)
 	// });
 }
 
+let PFE = document.getElementById("PFE");
+if (PFE)
+{
+	PFE.addEventListener("click", function() {
+	    location.replace("PathFindingExperiment.html")
+	});
+	// FFD.addEventListener("mouseenter", function() {
+	//     document.getElementById("FFD").style.borderColor = "orange";
+	// });
+	// FFD.addEventListener("mouseleave", function() {
+	//     document.getElementById("FFD").style.borderColor = "white";
+	// });
+}
+
 let Checkers = document.getElementById("Chec");
 if (Checkers)
 {
