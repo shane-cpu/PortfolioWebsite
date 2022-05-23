@@ -23,7 +23,7 @@ let playerScreenLocation = new Vector2();
 let playerGridPrevLocation = new Vector2();
 let playerWorldLocation = new Vector2();
 
-let playerSpeed = 1;
+let playerSpeed = 3;
 
 let playSpaceScreenLocation = new Vector2();
 let playSpaceWorldLocation = new Vector2();
