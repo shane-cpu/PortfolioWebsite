@@ -6,10 +6,10 @@
 // The player is a comander of the little ground troops so when all the ground troops die the game is over
 // The enemies are little dinosaurs that attack the player
 
-let inputW = false;
-let inputA = false;
-let inputS = false;
-let inputD = false;
+let inputUp    = false;
+let inputLeft  = false;
+let inputDown  = false;
+let inputRight = false;
 
 let arrows = [];
 let vectors = [];
@@ -77,19 +77,19 @@ function checkPlayerAction()
 {
 	let playerMovement = new Vector2();
 
-	if (inputW == true) // Up
+	if (inputUp == true) // Up
 	{
 		playerMovement.addVect(new Vector2(0, -1));
 	}
-	if (inputA == true) // Left
+	if (inputLeft == true) // Left
 	{
 		playerMovement.addVect(new Vector2(-1, 0));
 	}
-	if (inputS == true) // Down
+	if (inputDown == true) // Down
 	{
 		playerMovement.addVect(new Vector2(0, 1));
 	}
-	if (inputD == true) // Right
+	if (inputRight == true) // Right
 	{
 		playerMovement.addVect(new Vector2(1, 0));
 	}
@@ -152,22 +152,22 @@ function keyPressed(event)
 	if (event.key == "w") // Up
 	{
 		// move up
-		inputW = true;
+		inputUp = true;
 	}
 	else if (event.key == "a") // Left
 	{
 		// move left
-		inputA = true;
+		inputLeft = true;
 	}
 	else if (event.key == "s") // Down
 	{
 		// move down
-		inputS = true;
+		inputDown = true;
 	}
 	else if (event.key == "d") // Right
 	{
 		// move right
-		inputD = true;
+		inputRight = true;
 	}
 }
 
@@ -176,21 +176,21 @@ function keyReleased(event)
 	if (event.key == "w") // Up
 	{
 		// dont move up
-		inputW = false;
+		inputUp = false;
 	}
 	else if (event.key == "a") // Left
 	{
 		// dont move left
-		inputA = false;
+		inputLeft = false;
 	}
 	else if (event.key == "s") // Down
 	{
 		// dont move down
-		inputS = false;
+		inputDown = false;
 	}
 	else if (event.key == "d") // Right
 	{
 		// dont move right
-		inputD = false;
+		inputRight = false;
 	}
 }
