@@ -2,9 +2,11 @@
 
 function generateGrid(point, arrows, gridSize)
 {
+	// Getting the total squares that need paths generated for them.
 	let totalSections = (arrows.length * arrows[0].length);
 	let checkedSections = 0;
 
+	// These two arrays store the path cost and tile has been checked or now values
 	let theMap = [];
 	let checkingGrid = [];
 
@@ -20,20 +22,27 @@ function generateGrid(point, arrows, gridSize)
 		}
 	}
 
+	// Here I'm making sure the square we start on is marked as checked
 	let startingPoint = point.clone();
 	checkingGrid[startingPoint.x][startingPoint.y] = -1;
 
+	// This is an array full of points I'm checking to see the distance from the desired point 
 	let checkingPoints = [startingPoint];
 
+	// This is the number that keeps track of the number off iterations we have gone through
+	// It deturmines how many spaces away from the target point each square is
 	let layer = 0;
 
+	// While there are more total squares than squares that have been checked
 	while (totalSections > checkedSections)
 	{
 		let nextPoints = [];
 
+		// We look at each point and give it a distance value
 		checkingPoints.forEach((thing) => {
 			theMap[thing.x][thing.y] = layer;
 
+			// Then grab each of its neighbors to check them next
 			if (thing.x - 1 >= 0)
 			{
 				if (checkingGrid[thing.x - 1][thing.y] == 0)
@@ -75,9 +84,11 @@ function generateGrid(point, arrows, gridSize)
 
 		checkingPoints = nextPoints.slice();
 
+		// after looking at this layer we move the the next layer
 		layer++;
 	}
 
+	// Then using that information we make vectors that point to the squares that have less distance to the target than them
 	for (let i = 0; i < theMap.length; i++)
 	{
 		for (let j = 0; j < theMap[i].length; j++)
@@ -152,9 +163,11 @@ function generateGrid(point, arrows, gridSize)
 		}
 	}
 
+	// And then we return the result
 	return vectors.slice();
 }
 
+// This is the same as above with the exception os only building the cost map
 function generateCostMap(point, arrows)
 {
 	let totalSections = (arrows.length * arrows[0].length);
@@ -236,6 +249,7 @@ function generateCostMap(point, arrows)
 	return theMap;
 }
 
+// This function gets the direction vector from one point to another
 function getDirection(pos1, pos2)
 {
 	let direction = Math.atan2(pos2.y-pos1.y, pos2.x-pos1.x);
@@ -245,6 +259,7 @@ function getDirection(pos1, pos2)
 	return directionVector.clone();
 }
 
+// This function returns a normalized version of the result above
 function getNormalizedDirection(pos1, pos2)
 {
 	let newPoint = getDirection(pos1, pos2);
@@ -254,6 +269,7 @@ function getNormalizedDirection(pos1, pos2)
 	return newPoint.clone();
 }
 
+// This translates a point from the world to the grid
 function pointToGrid(point, xSections, ySections, gridSize) {
 	let gridHeight = ySections;
  	let gridWidth = xSections;
@@ -273,6 +289,7 @@ function pointToGrid(point, xSections, ySections, gridSize) {
 	return refPoint.clone();
 }
 
+// This translates a point from the grid to the world
 function gridToPoint(grid, xSections, ySections, gridSize) {
 	let gridHeight = ySections;
  	let gridWidth = xSections;
@@ -292,6 +309,7 @@ function gridToPoint(grid, xSections, ySections, gridSize) {
 	return refPoint.clone();
 }
 
+// This generates a random 0 or 1 number
 function randomInt()
 {
 	let number = Math.random();
