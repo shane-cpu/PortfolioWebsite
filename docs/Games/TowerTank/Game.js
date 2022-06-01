@@ -4,7 +4,7 @@
 // The Tower Tank is a tall tank that shoots towards the mouse - Next
 // Around the tower tank are little soldiers that fight enemies around the tank - Soon
 // The player is a comander of the little ground troops so when all the ground troops die the game is over - Soon
-// The enemies are little dinosaurs that attack the player - Soon
+// The enemies are little dinosaurs that attack the player - Next
 // The enemies use a flow field to chase the player - Soon
 
 // These are the current buttons the player is pressing
@@ -39,6 +39,10 @@ let playSpaceScreenLocation = new Vector2();
 
 // The place this piece of the world is sitting in the world
 let playSpaceWorldLocation = new Vector2();
+
+let enemies = [];
+let enemySpawnDelay = 10;
+let enemySpawnTimer = 0;
 
 function setup()
 {
@@ -96,7 +100,95 @@ function draw()
 
 	drawPlaySpace();
 
+	enemyLoop();
+
 	drawPlayer()
+}
+
+function enemyLoop()
+{
+	enemySpawnTimer++;
+
+	if (enemySpawnTimer >= enemySpawnDelay)
+	{
+		let enemyGridPosition = new Vector2(randomIntInRange(0, arrows.length), randomIntInRange(0, arrows[0].length));
+		// let enemyGridPosition = new Vector2(0, 0);
+		let enemyWorldPosition = gridToPoint(enemyGridPosition, arrows.length, arrows[0].length, playSpaceSize);
+
+		enemies.push(makeEnemy(enemyWorldPosition, 10));
+
+		enemySpawnTimer = 0;
+	}
+
+	if (enemies.length > 0)
+	{
+		for (let i = 0; i < enemies.length; i++)
+		{
+			let enemyGridPosition = pointToGrid(enemies[i].worldPos, arrows.length, arrows[0].length, playSpaceSize);
+
+			let movementVector = vectors[enemyGridPosition.x][enemyGridPosition.y];
+
+			moveEnemy(enemies[i], movementVector);
+
+			let worldPosClone = enemies[i].worldPos.clone();
+
+			let modifiedWorldPos = new Vector2(worldPosClone.x - playSpaceSize.x/2, worldPosClone.y - playSpaceSize.y/2);
+			let enemyScreenPosition = worldToScreenSpace(modifiedWorldPos);
+
+			if (enemyGridPosition.x == playerGridPrevLocation.x && enemyGridPosition.y == playerGridPrevLocation.y)
+			{
+				enemies.splice(i, 1);
+
+				i--;
+			}
+			else
+			{
+				drawEnemy(enemies[i], enemyScreenPosition);
+			}
+		}
+	}
+}
+
+function drawPlaySpace()
+{
+	// This draws the background
+	playSpaceScreenLocation = worldToScreenSpace(new Vector2(0, 0));
+
+
+	noStroke();
+	fill("#fff");
+	rectMode(CENTER);
+	rect(playSpaceScreenLocation.x, playSpaceScreenLocation.y, playSpaceSize.x, playSpaceSize.y);
+
+	drawField()
+}
+
+function drawPlayer()
+{
+	// This draws the player's green square
+	noStroke();
+	fill("#0f0");
+	rectMode(CENTER);
+	rect(playerScreenLocation.x, playerScreenLocation.y, 10, 10);
+}
+
+function drawField()
+{
+	// This draws the flow field on top of the background
+	for (let i = 0; i < arrows.length; i++)
+	{
+		for (let j = 0; j < arrows[i].length; j++)
+		{
+			if (costGrid[i][j] != 0)
+			{
+				stroke("#000");
+
+				let arrowPos = worldToScreenSpace(new Vector2((arrows[i][j].x - playSpaceSize.x/2), (arrows[i][j].y - playSpaceSize.y/2)))
+
+				arrow(arrowPos.x,  arrowPos.y, vectors[i][j].x, vectors[i][j].y, segmentWidth);
+			}
+		}
+	}
 }
 
 function checkPlayerAction()
@@ -145,44 +237,6 @@ function checkPlayerAction()
 	}
 }
 
-function drawPlaySpace()
-{
-	// This draws the background
-	playSpaceScreenLocation = new Vector2(width/2 - playerWorldLocation.x, height/2 - playerWorldLocation.y);
-
-	noStroke();
-	fill("#fff");
-	rectMode(CENTER);
-	rect(playSpaceScreenLocation.x, playSpaceScreenLocation.y, playSpaceSize.x, playSpaceSize.y);
-
-	drawField()
-}
-
-function drawPlayer()
-{
-	// This draws the player's green square
-	noStroke();
-	fill("#0f0");
-	rectMode(CENTER);
-	rect(playerScreenLocation.x, playerScreenLocation.y, 10, 10);
-}
-
-function drawField()
-{
-	// This draws the flow field on top of the background
-	for (let i = 0; i < arrows.length; i++)
-	{
-		for (let j = 0; j < arrows[i].length; j++)
-		{
-			if (costGrid[i][j] != 0)
-			{
-				stroke("#000");
-				arrow((arrows[i][j].x - playSpaceSize.x/2) + playSpaceScreenLocation.x, (arrows[i][j].y - playSpaceSize.y/2) + playSpaceScreenLocation.y, vectors[i][j].x, vectors[i][j].y, segmentWidth);
-			}
-		}
-	}
-}
-
 function keyPressed(event)
 {
 	// On any key pressed the key's event is stored
@@ -196,4 +250,13 @@ function keyReleased(event)
 	{
 		inputs.splice(inputs.indexOf(event.key), 1);
 	}
+}
+
+function worldToScreenSpace(pos)
+{
+	let worldPos = pos.clone()
+
+	let screenPos = new Vector2(width/2 + pos.x - playerWorldLocation.x, height/2 + pos.y - playerWorldLocation.y);
+
+	return screenPos
 }
