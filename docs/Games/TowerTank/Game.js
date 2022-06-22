@@ -128,7 +128,8 @@ function enemyLoop()
 
 			let movementVector = vectors[enemyGridPosition.x][enemyGridPosition.y];
 
-			moveEnemy(enemies[i], movementVector);
+			changeVelocity(enemies[i], movementVector);
+			moveEnemy(enemies[i], deltaTime);
 
 			let worldPosClone = enemies[i].worldPos.clone();
 
