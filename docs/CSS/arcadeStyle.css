@@ -1,33 +1,34 @@
-#TWODB {
-	background-image: url('../imgs/2DBoid.png');
-}
 
-#THREEDB {
-	background-image: url('../imgs/3DBoid.PNG');
-}
-
-#FFD {
-	background-image: url('../imgs/FlowField.PNG');
-}
-
-#PDM {
-	background-image: url('../imgs/Dungeon.png');
-}
-
-#PFE {
-	background-image: url('../imgs/FlowPath.png');
-}
-
-#ADD {
-	background-image: url('../imgs/ArrayBois.png');
+#PAID {
+	background-image: url('../imgs/Platbois.png');
 }
 
 #PIK {
 	background-image: url('../imgs/Pikmins.png');
 }
 
-#PAID {
-	background-image: url('../imgs/Platbois.png');
+#ADD {
+	background-image: url('../imgs/ArrayBois.png');
+}
+
+#PFE {
+	background-image: url('../imgs/FlowPath.png');
+}
+
+#PDM {
+	background-image: url('../imgs/Dungeon.png');
+}
+
+#FFD {
+	background-image: url('../imgs/FlowField.PNG');
+}
+
+#THREEDB {
+	background-image: url('../imgs/3DBoid.PNG');
+}
+
+#TWODB {
+	background-image: url('../imgs/2DBoid.png');
 }
 
 

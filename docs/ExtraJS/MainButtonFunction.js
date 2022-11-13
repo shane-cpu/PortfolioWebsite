@@ -1,39 +1,35 @@
 
 /// # Examples
 
-let TDB = document.getElementById("TWODB");
-if (TDB)
+let PAID = document.getElementById("PAID");
+if (PAID)
 {
-	TDB.addEventListener("click", function() {
-	    location.replace("2DBoidExample.html")
+	PAID.addEventListener("click", function() {
+	    location.replace("PlatformerAI.html")
 	});
-	// TDB.addEventListener("mouseenter", function() {
-	//     document.getElementById("2DB").style.borderColor = "orange";
-	// });
-	// TDB.addEventListener("mouseleave", function() {
-	//     document.getElementById("2DB").style.borderColor = "white";
-	// });
 }
 
-let THDB = document.getElementById("THREEDB");
-if (THDB)
+let PIK = document.getElementById("PIK");
+if (PIK)
 {
-	THDB.addEventListener("click", function() {
-	    location.replace("3DBoidExample.html")
+	PIK.addEventListener("click", function() {
+	    location.replace("PikminAI.html")
 	});
-	// THDB.addEventListener("mouseenter", function() {
-	//     document.getElementById("3DB").style.borderColor = "orange";
-	// });
-	// THDB.addEventListener("mouseleave", function() {
-	//     document.getElementById("3DB").style.borderColor = "white";
-	// });
 }
 
-let FFD = document.getElementById("FFD");
-if (FFD)
+let ADD = document.getElementById("ADD");
+if (ADD)
 {
-	FFD.addEventListener("click", function() {
-	    location.replace("FlowFieldExample.html")
+	ADD.addEventListener("click", function() {
+	    location.replace("ArrayDisplay.html")
+	});
+}
+
+let PFE = document.getElementById("PFE");
+if (PFE)
+{
+	PFE.addEventListener("click", function() {
+	    location.replace("PathFindingExperiment.html")
 	});
 	// FFD.addEventListener("mouseenter", function() {
 	//     document.getElementById("FFD").style.borderColor = "orange";
@@ -57,11 +53,11 @@ if (PDM)
 	// });
 }
 
-let PFE = document.getElementById("PFE");
-if (PFE)
+let FFD = document.getElementById("FFD");
+if (FFD)
 {
-	PFE.addEventListener("click", function() {
-	    location.replace("PathFindingExperiment.html")
+	FFD.addEventListener("click", function() {
+	    location.replace("FlowFieldExample.html")
 	});
 	// FFD.addEventListener("mouseenter", function() {
 	//     document.getElementById("FFD").style.borderColor = "orange";
@@ -71,28 +67,32 @@ if (PFE)
 	// });
 }
 
-let ADD = document.getElementById("ADD");
-if (ADD)
+let THDB = document.getElementById("THREEDB");
+if (THDB)
 {
-	ADD.addEventListener("click", function() {
-	    location.replace("ArrayDisplay.html")
+	THDB.addEventListener("click", function() {
+	    location.replace("3DBoidExample.html")
 	});
+	// THDB.addEventListener("mouseenter", function() {
+	//     document.getElementById("3DB").style.borderColor = "orange";
+	// });
+	// THDB.addEventListener("mouseleave", function() {
+	//     document.getElementById("3DB").style.borderColor = "white";
+	// });
 }
 
-let PIK = document.getElementById("PIK");
-if (PIK)
+let TDB = document.getElementById("TWODB");
+if (TDB)
 {
-	PIK.addEventListener("click", function() {
-	    location.replace("PikminAI.html")
+	TDB.addEventListener("click", function() {
+	    location.replace("2DBoidExample.html")
 	});
-}
-
-let PAID = document.getElementById("PAID");
-if (PAID)
-{
-	PAID.addEventListener("click", function() {
-	    location.replace("PlatformerAI.html")
-	});
+	// TDB.addEventListener("mouseenter", function() {
+	//     document.getElementById("2DB").style.borderColor = "orange";
+	// });
+	// TDB.addEventListener("mouseleave", function() {
+	//     document.getElementById("2DB").style.borderColor = "white";
+	// });
 }
 
 /// # Games
