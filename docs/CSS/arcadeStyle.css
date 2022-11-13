@@ -18,6 +18,18 @@
 	background-image: url('../imgs/FlowPath.png');
 }
 
+#ADD {
+	background-image: url('../imgs/ArrayBois.png');
+}
+
+#PIK {
+	background-image: url('../imgs/Pikmins.png');
+}
+
+#PAID {
+	background-image: url('../imgs/Platbois.png');
+}
+
 
 #Chec {
 	background-image: url('../imgs/Checkers.PNG');

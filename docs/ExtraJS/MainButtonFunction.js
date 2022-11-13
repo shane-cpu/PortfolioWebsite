@@ -1,4 +1,6 @@
 
+/// # Examples
+
 let TDB = document.getElementById("TWODB");
 if (TDB)
 {
@@ -68,6 +70,32 @@ if (PFE)
 	//     document.getElementById("FFD").style.borderColor = "white";
 	// });
 }
+
+let ADD = document.getElementById("ADD");
+if (ADD)
+{
+	ADD.addEventListener("click", function() {
+	    location.replace("ArrayDisplay.html")
+	});
+}
+
+let PIK = document.getElementById("PIK");
+if (PIK)
+{
+	PIK.addEventListener("click", function() {
+	    location.replace("PikminAI.html")
+	});
+}
+
+let PAID = document.getElementById("PAID");
+if (PAID)
+{
+	PAID.addEventListener("click", function() {
+	    location.replace("PlatformerAI.html")
+	});
+}
+
+/// # Games
 
 let Checkers = document.getElementById("Chec");
 if (Checkers)
