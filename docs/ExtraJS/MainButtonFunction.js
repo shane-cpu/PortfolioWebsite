@@ -1,6 +1,14 @@
 
 /// # Examples
 
+let PBG = document.getElementById("PBG");
+if (PBG)
+{
+	PBG.addEventListener("click", function() {
+	    location.replace("PoolBalls.html")
+	});
+}
+
 let PAID = document.getElementById("PAID");
 if (PAID)
 {
